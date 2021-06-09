@@ -10,8 +10,33 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('love you'),
-      ),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(28, 10, 28, 10),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Enter Email'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(28, 10, 28, 20),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Enter Password'),
+            ),
+          ),
+          ElevatedButton(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(130, 20, 130, 20),
+                child: Text('Login'),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              })
+        ],
+      )),
     );
   }
 }
